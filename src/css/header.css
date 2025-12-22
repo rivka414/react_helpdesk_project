@@ -1,0 +1,129 @@
+:root {
+    --header-bg: #1a1a2e; /* כחול לילה עמוק */
+    --accent-color: #4facfe; /* תכלת ניאון */
+    --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --text-main: #ffffff;
+    --text-dim: #a0aec0;
+    --header-height: 70px;
+}
+
+.app-header-container {
+    background: var(--header-bg);
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    direction: rtl;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header-links-group {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* עיצוב הקישורים */
+.header-nav-link {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 4px;
+}
+
+.header-nav-link:hover {
+    color: var(--text-main);
+    text-shadow: 0 0 8px rgba(79, 172, 254, 0.6);
+}
+
+/* אפקט קו תחתון מודרני */
+.header-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gradient);
+    transition: width 0.3s ease;
+}
+
+.header-nav-link:hover::after {
+    width: 100%;
+}
+
+/* כפתור התנתקות מעוצב */
+.logout-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ff4d4d; /* אדום עדין */
+    border: 1px solid rgba(255, 77, 77, 0.3);
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-right: 15px;
+}
+
+.logout-btn:hover {
+    background: #ff4d4d;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 77, 77, 0.3);
+}
+
+/* תצוגת שם המשתמש והתפקיד */
+.header-user-role {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 8px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* הוספת "נקודת סטטוס" קטנה ליד השם */
+.header-user-role::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #00ff88;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 10px #00ff88;
+}
+
+/* אנימציה כשהתפריט עולה */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.app-header-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* התאמה למובייל */
+@media (max-width: 768px) {
+    .app-header-container {
+        padding: 0 15px;
+    }
+    .header-links-group {
+        gap: 12px;
+    }
+    .header-user-role {
+        display: none; /* מסתיר במובייל כדי למנוע צפיפות */
+    }
+}

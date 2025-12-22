@@ -1,0 +1,132 @@
+/* Container ראשי */
+.dashboard-container { 
+    padding: 40px;
+    direction: rtl;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    max-width: 1000px;
+    margin: 60px auto;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+/* אפקט דקורטיבי ברקע ה-Container */
+.dashboard-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+}
+
+/* כותרות ראשיות */
+.dashboard-title-admin, 
+.dashboard-title-customer, 
+.dashboard-title-agent {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+/* הודעת ברוך הבא - עיצוב כרטיס אינפורמטיבי */
+.welcome-message {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #4a5568;
+    margin: 20px 0 40px 0;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    border-right: 5px solid;
+}
+
+/* רשימת האפשרויות ככרטיסים אינטראקטיביים */
+.options-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.option-item {
+    font-size: 1.05rem;
+    color: #2d3748;
+    padding: 25px 20px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #edf2f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    cursor: default;
+}
+
+.option-item:hover {
+    transform: translateY(-5px);
+    background-color: #ffffff;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
+    border-color: transparent;
+}
+
+/* הסרת האימוג'י הישן והוספת סטיילינג לסימן החדש */
+.option-item::before {
+    content: "●";
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* --- התאמות לפי תפקיד (Colors & Themes) --- */
+
+/* מנהל - אדום אלגנטי */
+.dashboard-title-admin { color: #e53e3e; }
+.admin-color {
+    background-color: #fff5f5;
+    border-right-color: #e53e3e;
+    color: #c53030;
+}
+.admin-options .option-item { border-bottom: 4px solid #feb2b2; }
+.admin-options .option-item:hover { border-bottom-color: #e53e3e; }
+.admin-options .option-item::before { color: #e53e3e; }
+
+/* לקוח - כחול הייטק */
+.dashboard-title-customer { color: #3182ce; }
+.customer-color {
+    background-color: #ebf8ff;
+    border-right-color: #3182ce;
+    color: #2b6cb0;
+}
+.customer-options .option-item { border-bottom: 4px solid #90cdf4; }
+.customer-options .option-item:hover { border-bottom-color: #3182ce; }
+.customer-options .option-item::before { color: #3182ce; }
+
+/* נציג - כתום/צהוב ענבר */
+.dashboard-title-agent { color: #d69e2e; }
+.agent-color {
+    background-color: #fffaf0;
+    border-right-color: #d69e2e;
+    color: #b7791f;
+}
+.agent-options .option-item { border-bottom: 4px solid #fbd38d; }
+.agent-options .option-item:hover { border-bottom-color: #d69e2e; }
+.agent-options .option-item::before { color: #d69e2e; }
+
+/* התאמה למובייל */
+@media (max-width: 768px) {
+    .dashboard-container {
+        margin: 20px;
+        padding: 25px;
+    }
+    .dashboard-title-admin, 
+    .dashboard-title-customer, 
+    .dashboard-title-agent {
+        font-size: 1.7rem;
+    }
+}

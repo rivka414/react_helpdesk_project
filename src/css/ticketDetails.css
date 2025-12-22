@@ -1,0 +1,152 @@
+/* --- רקע כללי --- */
+body {
+    background-color: #f5f7fa;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+/* כותרות */
+.title_details {
+    text-align: center;
+    color: #2c3e50;
+    margin: 20px 0;
+}
+
+/* פרטי כרטיס */
+.content_details {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 10px auto;
+    max-width: 700px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-size: 16px;
+}
+
+/* תגובות - קופסא כללית */
+.comments {
+    max-width: 700px;
+    margin: 10px auto;
+}
+
+/* תגובת נציג */
+.comment-content.support {
+    background-color: #e8f4fd; /* כחול בהיר */
+    border-left: 4px solid #3498db;
+    font-weight: 600;
+    color: #1a3d6b;
+    padding: 12px 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 12px;
+    position: relative;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+/* תגובת לקוח */
+.comment-content.client {
+    background-color: #fdf3e8; /* כתום בהיר */
+    border-left: 4px solid #f39c12;
+    font-weight: 500;
+    color: #7a4a00;
+    padding: 12px 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 12px;
+    position: relative;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+/* --- עיצוב כפתור הוספת תגובה משודרג --- */
+
+.button_details {
+    /* הגדרת תצוגה כדי שהלינק יתנהג כמו כפתור */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* מיקום ומרווחים */
+    margin: 40px auto; /* יותר רווח מהתגובות */
+    width: fit-content;
+    min-width: 200px;
+    padding: 16px 32px;
+    
+    /* צבעים וגרדיאנט (כחול נקי וחדשני) */
+    background: linear-gradient(135deg, #0070f3 0%, #0056b3 100%);
+    color: #ffffff;
+    
+    /* טיפוגרפיה */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    
+    /* עיגול ופינות */
+    border-radius: 16px;
+    border: none;
+    
+    /* צללים ותנועה */
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 112, 243, 0.2);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.button_details:hover {
+    /* אפקט ריחוף - קפיצה קלה למעלה והארה */
+    background: linear-gradient(135deg, #007cf0 0%, #0061d5 100%);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 112, 243, 0.3);
+    color: #ffffff; /* מוודא שהטקסט נשאר לבן */
+}
+
+.button_details:active {
+    /* אפקט לחיצה - שקיעה קלה */
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 5px 10px rgba(0, 112, 243, 0.2);
+}
+
+/* הוספת אייקון פלוס קטן לפני הטקסט (אופציונלי, דרך CSS) */
+.button_details::before {
+    content: '+';
+    margin-left: 8px;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* התאמה למובייל */
+@media (max-width: 480px) {
+    .button_details {
+        width: 90%; /* כפתור רחב יותר במובייל ללחיצה קלה */
+        padding: 14px 20px;
+    }
+}
+/* אין תגובות */
+.noComments {
+    text-align: center;
+    color: #888;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+/* גלילה נראית יותר נקייה */
+.comment-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.comment-content::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 3px;
+}
+
+.comment-content::-webkit-scrollbar-track {
+    background-color: rgba(0,0,0,0.05);
+}

@@ -1,0 +1,93 @@
+/* מכולה ראשית - ממרכזת את הטופס במסך */
+.div_form_change_agent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh; /* משאיר מקום להדר ולפוטר */
+    padding: 20px;
+    background-color: #f4f7f6;
+    direction: rtl;
+}
+
+/* עיצוב כרטיס הטופס */
+.form_change_agent {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+/* כותרת הטופס */
+.h2_change_agent {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* אזור בחירת הסוכן */
+.all_options_change_agent {
+    margin-bottom: 2rem;
+}
+
+/* עיצוב שדה הבחירה (Select) */
+.form_change_agent select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fafafa;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.form_change_agent select:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #fff;
+}
+
+/* עיצוב האופציות בתוך הסלקט */
+.options_change_agent {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* עיצוב כפתור השליחה */
+.button_change_agent {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.button_change_agent:hover {
+    background-color: #0056b3;
+}
+
+.button_change_agent:active {
+    transform: scale(0.98);
+}
+
+/* טיפול במצב של שגיאה או שדה חובה (אופציונלי) */
+.form_change_agent select:invalid {
+    border-color: #dc3545;
+}
+.ticket-to-agent-success {
+    margin-top: 15px;
+    color: #007bff;
+    font-weight: 600;
+    font-size: 1rem;
+}

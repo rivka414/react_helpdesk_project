@@ -1,0 +1,204 @@
+:root {
+    --brand-linear: linear-gradient(135deg, #6366f1 0%, #22d3ee 100%);
+    --bg-soft: #f8fafc;
+    --text-heading: #0f172a;
+    --input-bg: #f1f5f9;
+}
+
+.login-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-soft);
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(34, 211, 238, 0.15) 0px, transparent 50%);
+    direction: rtl;
+    font-family: 'system-ui', -apple-system, sans-serif;
+}
+
+.login-card {
+    background: #ffffff;
+    padding: 60px 50px;
+    border-radius: 40px; /* קימור משמעותי ומודרני */
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 
+        0 10px 25px -5px rgba(0, 0, 0, 0.02),
+        0 25px 50px -12px rgba(0, 0, 0, 0.04);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.4s ease;
+}
+
+/* אלמנט עיצובי יצירתי: הנקודה המנחה */
+.login-card::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--brand-linear);
+    border-radius: 12px;
+    rotate: 45deg;
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.login-title {
+    text-align: center;
+    color: var(--text-heading);
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -1.5px;
+}
+
+.login-card p.subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 40px;
+    font-size: 1rem;
+}
+
+.login-field-group {
+    margin-bottom: 24px;
+}
+
+.login-field-group label {
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.login-field-group input {
+    width: 88%;
+    padding: 18px 22px;
+    background-color: var(--input-bg);
+    border: 2px solid transparent;
+    border-radius: 20px;
+    font-size: 1rem;
+    color: var(--text-heading);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login-field-group input:focus {
+    background-color: #ffffff;
+    border-color: #6366f1;
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.1);
+    outline: none;
+}
+
+/* שגיאות ולידציה */
+.login-field-group input.invalid {
+    background-color: #fff1f2;
+    border-color: #fb7185;
+}
+
+.error_login_user {
+    color: #e11d48;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 8px;
+    padding-right: 10px;
+}
+
+.login-details-errorSuccess {
+    background-color: #fffda3;
+    color: #f59c27;
+    border: 1px solid #f3cca7;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+.login-submit-btn {
+    width: 100%;
+    padding: 20px;
+    background: var(--text-heading); /* שחור עמוק מודרני */
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.login-submit-btn:hover {
+    background: #1e293b;
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.login-submit-btn:active {
+    transform: scale(0.97);
+}
+
+/* עטיפה שמרכזת את הניווט והכרטיס יחד */
+.login-wrapper {
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* מיכל הכפתורים מעל הטופס */
+.auth-toggle-navigation {
+    display: flex;
+    background-color: rgba(226, 232, 240, 0.8); /* רקע חצי שקוף */
+    backdrop-filter: blur(8px);
+    padding: 6px;
+    border-radius: 20px;
+    margin-bottom: 15px; /* רווח בין הכפתורים לטופס */
+    width: fit-content;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-top: 40px
+}
+
+/* עיצוב הכפתורים */
+.nav-btn {
+    border: none;
+    padding: 10px 25px;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    background: transparent;
+    color: #64748b;
+    transition: all 0.3s ease;
+}
+
+/* כפתור פעיל עם אפקט בולט */
+.nav-btn.active {
+    background-color: #ffffff;
+    color: #6366f1;
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+}
+
+/* אפקט ריחוף לכפתור לא פעיל */
+.nav-btn:hover:not(.active) {
+    color: var(--text-heading);
+}
+
+/* התאמה לכרטיס הקיים כדי שישתלב יפה */
+.login-card {
+    margin-top: 0; /* ביטול מרווחים מיותרים */
+}
+
+/* התאמה למובייל */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 40px 25px;
+        border-radius: 30px;
+    }
+}

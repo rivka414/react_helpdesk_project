@@ -1,0 +1,71 @@
+/* Footer Component Styles */
+
+.app-footer-container {
+    flex-shrink: 0;
+    width: 100%;
+    background: #1a1a2e; /* תואם ל-Header */
+    color: #a0aec0; /* טקסט אפרפר עדין */
+    padding: 40px 0 20px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    direction: rtl;
+}
+
+/* עיצוב הלוגו ב-Footer */
+.footer_h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* פס הפרדה דקורטיבי */
+.app-footer-container hr {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #4facfe, transparent);
+    border: none;
+    margin: 20px auto;
+    border-radius: 2px;
+}
+
+/* עיצוב פסקאות הטקסט */
+.app-footer-container p {
+    font-size: 1rem;
+    margin: 8px 0;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* פסקה תחתונה (זכויות יוצרים) */
+.app-footer-container p:last-child {
+    font-size: 0.8rem;
+    color: #636e72;
+    margin-top: 25px;
+    font-weight: 400;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: inline-block;
+    padding-top: 15px;
+    width: 80%;
+}
+
+/* אפקט ריחוף עדין לטקסט */
+.app-footer-container p:hover {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+/* התאמה למובייל */
+@media (max-width: 768px) {
+    .app-footer-container {
+        padding: 30px 20px 15px 20px;
+    }
+    
+    .footer_h2 {
+        font-size: 1.5rem;
+    }
+}

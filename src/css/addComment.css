@@ -1,0 +1,177 @@
+/*---------------------------------------add comments---------------------------------------*/
+/* סגנון כללי לטופס */
+.add-comments-form {
+    max-width: 600px; /* רוחב מירבי למרכוז */
+    margin: 40px auto; /* מרכוז הטופס והוספת מרווח מעל ומתחת */
+    padding: 30px;
+    border: 1px solid #ccc; /* גבול עדין */
+    border-radius: 8px; /* פינות מעוגלות */
+    background-color: #f9f9f9; /* רקע בהיר */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* צל עדין */
+    direction: rtl; /* כיוון כתיבה מימין לשמאל */
+    text-align: right; /* יישור טקסט לימין */
+    font-family: Arial, sans-serif; /* גופן קריא */
+}
+
+/* כותרת הטופס */
+.add-comments-form h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd; /* קו הפרדה עדין */
+}
+
+/* קבוצת השדה (תווית + קלט) */
+.add-comments-form .form-group {
+    margin-bottom: 20px;
+}
+
+/* תווית השדה */
+.add-comments-form label {
+    display: block; /* הופך את התווית לבלוק כדי שתתפוס שורה שלמה */
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* תיבת הטקסט (Textarea) */
+.add-comments-form textarea {
+    width: 100%; /* רוחב מלא של הורה */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    resize: vertical; /* מאפשר שינוי גודל אנכי בלבד */
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-sizing: border-box; /* מבטיח שה-Padding לא יחרוג מה-Width */
+}
+
+/* אפקט פוקוס על תיבת הטקסט */
+.add-comments-form textarea:focus {
+    border-color: #007bff; /* צבע כחול בפוקוס */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* צל קל בפוקוס */
+    outline: none; /* מסיר את המסגרת המובנית של הדפדפן */
+}
+
+/* כפתור השליחה */
+.add-comments-form button[type="submit"] {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff; /* רקע כחול */
+    color: white; /* טקסט לבן */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 15px;
+}
+
+/* אפקט ריחוף (Hover) על הכפתור */
+.add-comments-form button[type="submit"]:hover {
+    background-color: #0056b3; /* כחול כהה יותר בריחוף */
+}
+
+/* אפקט לחיצה (Active) על הכפתור */
+.add-comments-form button[type="submit"]:active {
+    background-color: #004085; /* כחול כהה בלחיצה */
+    transform: translateY(1px); /* הזזה קלה מטה */
+}
+
+
+/* --- עיצוב משופר ל-textarea --- */
+.add-comments-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e2e8f0; /* גבול מעט עבה יותר למראה מודרני */
+    border-radius: 12px; /* פינות מעוגלות יותר */
+    resize: vertical;
+    font-size: 1rem;
+    font-family: inherit;
+    line-height: 1.5;
+    background-color: #ffffff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+}
+
+/* אפקט פוקוס רגיל */
+.add-comments-form textarea:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    outline: none;
+}
+
+/* --- עיצוב מצב שגיאה (Invalid) --- */
+.add-comments-form textarea.invalid {
+    border-color: #fb7185; /* צבע אדום-ורוד */
+    background-color: #fff1f2; /* רקע אדמדם בהיר מאוד */
+}
+
+.add-comments-form textarea.invalid:focus {
+    box-shadow: 0 0 0 4px rgba(251, 113, 133, 0.15);
+}
+
+/* --- הודעת השגיאה מתחת לשדה --- */
+.error_new_comment {
+    color: #e11d48;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    animation: fadeInError 0.4s ease;
+}
+
+/* הוספת אייקון אזהרה לפני הטקסט */
+.error_new_comment::before {
+    content: "⚠️";
+    font-size: 0.9rem;
+}
+
+/* --- הודעת הצלחה משופרת --- */
+.add-comment-success {
+    margin-top: 20px;
+    background-color: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideUp 0.5s ease;
+}
+
+.add-comment-success::before {
+    content: "✅";
+}
+
+/* --- אנימציות --- */
+@keyframes fadeInError {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

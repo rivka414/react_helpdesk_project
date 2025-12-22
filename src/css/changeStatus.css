@@ -1,0 +1,134 @@
+/* מכולה ראשית */
+.main_container_change_status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    background-color: #f3f4f6;
+    padding: 20px;
+    direction: rtl;
+}
+
+/* כרטיס הטופס */
+.form_change_status {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    border-top: 6px solid #2ecc71; /* פס ירוק המציין התקדמות/סטטוס */
+}
+
+/* כותרת */
+.h2_change_status {
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 1.6rem;
+}
+
+.ticket_info_status {
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+/* אזור הבחירה */
+.select_change_status {
+    margin-bottom: 30px;
+}
+
+.select_change_status select {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    appearance: none; /* מסיר את החץ המובנה לעיצוב אישי */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+    background-size: 1em;
+}
+
+.select_change_status select:focus {
+    outline: none;
+    border-color: #2ecc71;
+    box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
+}
+
+/* כפתור */
+.button_change_status {
+    width: 100%;
+    padding: 15px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.button_change_status:hover {
+    background-color: #219150;
+}
+
+.button_change_status:active {
+    transform: scale(0.99);
+}
+
+/* אופציות */
+.option_change_status {
+    padding: 10px;
+}
+
+/* --- עיצוב הודעת הצלחה לשינוי סטטוס --- */
+.change-status-success {
+    margin-top: 20px;
+    padding: 14px;
+    background-color: #ecfdf5; /* רקע ירוק בהיר מאוד */
+    border: 1px solid #10b981; /* גבול ירוק ברור */
+    color: #065f46; /* טקסט ירוק כהה */
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    
+    /* אנימציה */
+    animation: statusSuccessIn 0.4s ease-out forwards;
+}
+
+/* הוספת אייקון V קטן */
+.change-status-success::before {
+    content: "✔️";
+    font-size: 1.1rem;
+}
+
+/* הגדרת האנימציה - כניסה מצד שמאל עם שקיפות (בגלל ה-RTL זה יראה מצוין) */
+@keyframes statusSuccessIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* אפקט שינוי צבע הכפתור בזמן הצלחה */
+.form_change_status:has(.change-status-success) .button_change_status {
+    background-color: #10b981;
+    pointer-events: none; /* מונע לחיצות נוספות בזמן ההמתנה לניווט */
+}
+

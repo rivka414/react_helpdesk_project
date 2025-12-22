@@ -1,0 +1,186 @@
+/* עיצוב הכותרת הראשית */
+.title_new_ticket {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 25px;
+    font-family: sans-serif;
+}
+
+/* מיכל הטופס המרכזי */
+.form_new_ticket {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    direction: rtl; /* הבטחת כיווניות לימין */
+}
+
+/* עיצוב שורות הטופס */
+.new_ticket {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.new_ticket label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #34495e;
+    font-size: 14px;
+}
+
+/* עיצוב שדות הקלט והבחירה */
+.new_ticket input,
+.new_ticket select {
+    padding: 12px;
+    border: 1px solid #dcdfe6;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+.new_ticket input:focus,
+.new_ticket select:focus {
+    border-color: #409eff;
+}
+
+/* עיצוב האופציות בתוך הסלקט */
+.options_form_new_ticket {
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* עיצוב כפתור השליחה */
+.button_form_new_ticket {
+    width: 100%;
+    padding: 12px;
+    background-color: #409eff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.button_form_new_ticket:hover {
+    background-color: #66b1ff;
+}
+
+.button_form_new_ticket:active {
+    background-color: #3a8ee6;
+}
+
+/* עיצוב שדות לא תקינים - כולל תמיכה ב-textarea */
+.new_ticket input.invalid,
+.new_ticket textarea.invalid,
+.new_ticket select.invalid {
+    border-color: #fb7185;
+    background-color: #fff1f2;
+    box-shadow: 0 0 0 2px rgba(251, 113, 133, 0.1);
+}
+
+/* הודעת השגיאה */
+.error_new_ticket {
+    color: #e11d48;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    animation: slideIn 0.3s ease-out; /* אנימציה קלה להופעת השגיאה */
+}
+
+/* הוספת אייקון "!" קטן לפני הטקסט (אופציונלי) */
+.error_new_ticket::before {
+    content: "⚠️";
+    font-size: 0.9rem;
+}
+
+/* אנימציית כניסה להודעת השגיאה */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* עיצוב כללי ל-textarea שיהיה תואם ל-input */
+.new_ticket textarea {
+    padding: 12px;
+    border: 1px solid #dcdfe6;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+    min-height: 100px; /* גובה מינימלי לתיאור */
+    resize: vertical; /* מאפשר למשתמש להגדיל רק גובה */
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.new_ticket textarea:focus {
+    border-color: #409eff;
+}
+
+/* עיצוב הודעת הצלחה - יצירת כרטיס */
+.new-ticket-success {
+    margin-top: 25px;
+    background-color: #f0fdf4; /* ירוק בהיר מאוד */
+    border: 1px solid #bbf7d0; /* גבול ירוק עדין */
+    color: #166534; /* טקסט ירוק כהה */
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    
+    /* אנימציית כניסה: החלקה מלמטה למעלה עם שקיפות */
+    animation: successSlideUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* הוספת אייקון V לפני הטקסט */
+.new-ticket-success::before {
+    content: "✅";
+    font-size: 1.2rem;
+}
+
+/* הגדרת האנימציה */
+@keyframes successSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* אפקט נוסף לכפתור בזמן הצלחה (אופציונלי) */
+.form_new_ticket:has(.new-ticket-success) .button_form_new_ticket {
+    background-color: #22c55e;
+    cursor: default;
+}
+
+/* התאמה למובייל */
+@media (max-width: 600px) {
+    .form_new_ticket {
+        margin: 20px;
+        padding: 20px;
+    }
+}

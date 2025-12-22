@@ -1,0 +1,174 @@
+/* מיכל ראשי */
+.main_container_add_user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    min-height: calc(100vh - 160px);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* רקע מעבר רך */
+}
+
+/* כרטיס הטופס */
+.form_add_user {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 480px;
+    direction: rtl;
+    border-top: 5px solid #007bff; /* קו עליון דקורטיבי */
+}
+
+/* כותרת */
+.h2_form_add_user {
+    text-align: center;
+    color: #1a1a2e;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+/* שדות קלט */
+.inputs_add_user {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px; /* צמצום המרווח כי הודעת השגיאה תתפוס מקום */
+}
+
+.inputs_add_user label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+.inputs_add_user input, 
+.inputs_add_user select {
+    padding: 14px;
+    border: 2px solid #edf2f7;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+}
+
+/* אפקט פוקוס */
+.inputs_add_user input:focus, 
+.inputs_add_user select:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
+}
+
+/* עיצוב הודעות הוולידציה - ה"וואו" */
+.error_add_user {
+    color: #e53e3e;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    display: block;
+    padding-right: 5px;
+    animation: slideIn 0.3s ease-out; /* אנימציה עדינה לכניסת השגיאה */
+}
+
+/* שינוי צבע השדה כשיש שגיאה (אופציונלי - דורש הוספת Class דינמי ב-React) */
+.inputs_add_user input.invalid {
+    border-color: #fc8181;
+    background-color: #fff5f5;
+}
+
+/* כפתור שליחה */
+.form_add_user button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 20px;
+}
+
+.form_add_user button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.form_add_user button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* אנימציות */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+
+
+/* הודעת הצלחה כללית */
+.success_add_user_message {
+    background-color: #f0fff4;
+    color: #2f855a;
+    border: 1px solid #c6f6d5;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    animation: fadeInDown 0.4s ease-out;
+}
+
+/* הודעת שגיאה כללית (למשל: משתמש קיים) */
+.error_add_user_message {
+    background-color: #fff5f5;
+    color: #c53030;
+    border: 1px solid #feb2b2;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+/* אנימציית כניסה להודעת הצלחה */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* אנימציית "רעד" לשגיאה כדי למשוך תשומת לב */
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+
+
+
+
+/* התאמה למובייל */
+@media (max-width: 480px) {
+    .form_add_user {
+        padding: 25px;
+        margin: 10px;
+    }
+}

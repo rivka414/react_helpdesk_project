@@ -53,17 +53,7 @@ const TicketList: FunctionComponent<TicketListProps> = () => {
         ? list.filter(ticket => !ticket.assigned_to)
         : list;
 
-    // const deleteTicketById = async (ticketId: number) => {
-    //     if (!token) return;
-    //     try {
-    //         await deleteTicket(ticketId.toString(), token);
-    //         setList(list.filter(ticket => ticket.id != ticketId));
-    //     }
-    //     catch (err) {
-    //         alert("שגיאה במחיקת הכרטיס");
-    //         console.log(err);
-    //     }
-    // };
+
     return (<>
         <Header />
         <div className="list-content-wrapper">
@@ -114,11 +104,8 @@ const TicketList: FunctionComponent<TicketListProps> = () => {
                                     </div>
                                 )}
                                 {user?.role != "customer" && <Link className="view-details-btn" to={`/moreUpdateTicket/${ticket.id}`}>לפעולות נוספות</Link>}
-                                <Link className="view-details-btn" to={`/ticketList/${ticket.id}`}>לצפיה בפרטים</Link>
+                                <Link className="view-details-btn" to={`/tickets/${ticket.id}`}>לצפיה בפרטים</Link>
 
-                                {/* {user?.role == "admin" && <button className="view-details-btn" onClick={() => {
-                                    deleteTicketById(ticket.id);
-                                }}>למחיקת הכרטיס</button>} */}
                             </div>
                         </div>
                     ))}

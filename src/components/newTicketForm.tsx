@@ -1,7 +1,7 @@
 import { useState, type FunctionComponent } from "react";
 import Header from "./header";
 import Footer from "./footer";
-import { set, useForm, type SubmitHandler } from "react-hook-form";
+import { useForm, type SubmitHandler } from "react-hook-form";
 import { createTicket } from "../services/api.service";
 import { useNavigate } from "react-router-dom";
 import "../css/newTicketForm.css";
@@ -71,7 +71,6 @@ const NewTicketForm: FunctionComponent<NewTicketFormProps> = () => {
                         <option value="1" className="options_form_new_ticket">נמוך</option>
                         <option value="2" className="options_form_new_ticket">בינוני</option>
                         <option value="3" className="options_form_new_ticket">גבוה</option>
-                        <option value="4" className="options_form_new_ticket">דחוף מאד</option>
                     </select>
                 </div>
 

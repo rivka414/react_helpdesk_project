@@ -23,7 +23,7 @@ const Header: FunctionComponent<HeaderProps> = () => {
 
                     <Link className="header-nav-link" to="/dashboard">בית</Link>
                     {user?.role == 'customer' &&
-                        <Link className="header-nav-link" to="/newTicketForm">טופס כרטיס חדש</Link>
+                        <Link className="header-nav-link" to="/tickets/new">טופס כרטיס חדש</Link>
                     }
 
                     <Link className="header-nav-link" to="/ticketList">רשימת כרטיסים</Link>

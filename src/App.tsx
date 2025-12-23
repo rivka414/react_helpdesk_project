@@ -16,6 +16,10 @@ import TicketToAgent from './components/ticketToAgent'
 import ImportanceTickect from './components/importanceTicket'
 import AddUser from './components/addUser'
 import Error from './components/error'
+import GuardRole from './guards/guardRoleAdmin'
+import GuardRoleAdminAgent from './guards/guardRoleAdminAgent'
+import GuardNotAdmin from './guards/guardNotAdmin'
+import GuardNotAgent from './guards/guardNotAgent'
 
 function App() {
 
@@ -34,18 +38,28 @@ function App() {
               <Routes>
                 <Route path='dashboard' element={<Dashboard />} />
                 <Route path='footer' element={<Footer />} />
-
-                <Route path='newTicketForm' element={<NewTicketForm />} />
+                <Route element={<GuardNotAdmin />}>
+                  <Route path='/addComments/:id' element={<AddComments />} />
+                  <Route element={<GuardNotAgent />}>
+                    <Route path='tickets/new' element={<NewTicketForm />} />
+                  </Route>
+                </Route>
                 <Route path='header' element={<Header />} />
-                <Route path='ticketList/:id' element={<TicketDetails />} />
+                <Route path='tickets/:id' element={<TicketDetails />} />
                 <Route path='ticketList' element={<TicketList />} />
-                {/* <Route path='ticketList/:id' element={<TicketList />} /> */}
-                <Route path='/addComments/:id' element={<AddComments />} />
-                <Route path='/changeStatus/:id' element={<ChangeStatus />} />
-                <Route path='/moreUpdateTicket/:id' element={<MoreUpdateTickect />} />
-                <Route path='/importanceTicket/:id' element={<ImportanceTickect />} />
-                <Route path='/ticketToAgent/:id' element={<TicketToAgent />} />
-                <Route path='/addUser' element={<AddUser />} />
+
+
+                <Route element={<GuardRoleAdminAgent />}>
+                  <Route path='/changeStatus/:id' element={<ChangeStatus />} />
+                  <Route path='/moreUpdateTicket/:id' element={<MoreUpdateTickect />} />
+                  <Route path='/importanceTicket/:id' element={<ImportanceTickect />} />
+                </Route>
+
+                <Route element={<GuardRole />}>
+                  <Route path='/ticketToAgent/:id' element={<TicketToAgent />} />
+                  <Route path='/addUser' element={<AddUser />} />
+                </Route>
+
                 <Route path='*' element={<Error />} />
               </Routes></GuardRouter>} />
 

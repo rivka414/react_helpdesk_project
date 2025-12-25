@@ -9,14 +9,23 @@ import Footer from "./footer";
 interface TicketListProps {
 
 }
+interface Ticket {
+    id:number,
+    subject:string,
+    description:string,
+    status_name:string,
+    priority_name:string,
+    created_at:string,
+    assigned_to:string | null,
+    assigned_to_name:string | null,
+}
 
 const TicketList: FunctionComponent<TicketListProps> = () => {
     const token = localStorage.getItem("token");
-    let [list, setList] = useState<any[]>([]);
+    let [list, setList] = useState<Ticket[]>([]);
     const { state } = useContext(UserContext);
     const { user } = state;
     const navigate = useNavigate();
-    // const [filterUnassigned, setFilterUnassigned] = useState(false);
     const [filterUnassigned, setFilterUnassigned] = useState<boolean>(() => {
         const saved = localStorage.getItem("filterUnassigned");
         return saved ? JSON.parse(saved) : false;

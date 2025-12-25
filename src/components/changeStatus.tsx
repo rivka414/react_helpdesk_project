@@ -45,7 +45,8 @@ const ChangeStatus: FunctionComponent<ChangeStatusProps> = () => {
             await changeTicketStatus(id as string, data.id, token);
             setSuccessMessage("סטטוס הכרטיס שונה בהצלחה");
             const timeOut = setTimeout(() => {
-            navigate("/ticketList");}, 2000);
+                navigate("/ticketList");
+            }, 2000);
             return () => clearTimeout(timeOut);
         }
         catch (error) {

@@ -11,13 +11,24 @@ import Footer from "./footer";
 interface TicketDetailsProps {
 
 }
+interface Ticket {
+    id:number,
+    subject:string,
+    description:string,
+
+}
+interface Comment {
+    id:number,
+    content:string,
+    author_id:number,
+}
 /*קריאת שרת עם הid שב url והצגה של הפרטים שלו*/
 const TicketDetails: FunctionComponent<TicketDetailsProps> = () => {
 
     const { id } = useParams();
     const token = localStorage.getItem("token");
-    const [ticket, setTicket] = useState<any>(null);
-    const [comments, setComments] = useState<any[]>([]);
+    const [ticket, setTicket] = useState<Ticket | null>(null);
+    const [comments, setComments] = useState<Comment[]>([]);
     const { state } = useContext(UserContext);
     const { user } = state;
     const navigate = useNavigate();

@@ -59,7 +59,7 @@ const Login: FunctionComponent<LoginProps> = () => {
             <Header />
 
             <div className="login-page-container">
-                <div className="login-wrapper"> 
+                <div className="login-wrapper">
 
                     <div className="auth-toggle-navigation">
                         <button

@@ -45,7 +45,8 @@ const ImportanceTickect: FunctionComponent<ImportanceTickectProps> = () => {
             await updatePriority(id as string, data.id, token);
             setSuccessMessage("רמת הדחיפות של הכרטיס שונתה בהצלחה");
             const timeOut = setTimeout(() => {
-            navigate("/ticketList");}, 2000);
+                navigate("/ticketList");
+            }, 2000);
             return () => clearTimeout(timeOut);
         }
         catch (error) {

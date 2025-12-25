@@ -22,7 +22,7 @@ const AddUser: FunctionComponent<AddUserProps> = () => {
     const navigate = useNavigate();
     const token = localStorage.getItem("token");
     const [successMessage, setSuccessMessage] = useState<string | null>(null);
-    const[errorMessage, setErrorMessage] = useState<string | null>(null);
+    const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
     const onSubmit: SubmitHandler<AddUserState> = async (data) => {
         if (!token) { return; }
@@ -37,9 +37,10 @@ const AddUser: FunctionComponent<AddUserProps> = () => {
             }
             await addUser(data.name, data.email, data.password, data.role, token);
             setErrorMessage(null);
-             setSuccessMessage("המשתמש נוסף בהצלחה");
-             const timeout = setTimeout(() => {
-            navigate(`/dashboard`);}, 2000);
+            setSuccessMessage("המשתמש נוסף בהצלחה");
+            const timeout = setTimeout(() => {
+                navigate(`/dashboard`);
+            }, 2000);
             return () => clearTimeout(timeout);
         } catch (err: any) {
             alert("אירעה שגיאה כללית");
@@ -118,7 +119,7 @@ const AddUser: FunctionComponent<AddUserProps> = () => {
                     <select className={errors.role ? "invalid" : ""} {...register("role", {
                         required: "חובה לבחור תפקיד",
 
-                       
+
                     })}>
                         <option value="">בחר תפקיד</option>
                         <option value="admin">מנהל</option>

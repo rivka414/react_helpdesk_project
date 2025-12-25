@@ -26,8 +26,9 @@ const NewTicketForm: FunctionComponent<NewTicketFormProps> = () => {
             }
             await createTicket(data.subject, data.description, data.priority_id, token);
             setSuccessMessage(`הכרטיס נוצר בהצלחה: ${data.subject}`);
-            const timeOut=setTimeout(() => {
-            navigate(`/ticketList`);},2000);
+            const timeOut = setTimeout(() => {
+                navigate(`/ticketList`);
+            }, 2000);
             return () => clearTimeout(timeOut);
         } catch (error) {
             console.error("Failed to create ticket:", error);
